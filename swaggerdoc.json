@@ -1,0 +1,77 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Game StatusPro",
+        "description": "Essa API tem como objetivo integrar com o banco de dados do jogo",
+        "termOfService": "https://localhost:5000/terms",
+        "contact": {
+            "linkedIn": "https://www.linkedin.com/in/renato-ferreira-01/"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://localhost:5000",
+            "description": "API de test"
+        },
+        {
+            "url": "https://localhost:5000",
+            "description": "API de test 2"
+        }
+    ],
+    "paths": {
+        "/signup": {
+            "post": {
+                "summary": "Cadastro de Usuário",
+                "description": "Essa rota é responsável por criar o usuário",
+                "tags": [
+                    "users"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "name": "Renato",
+                                        "nickname": "Jogador10",
+                                        "email": "renato@email.com",
+                                        "password": "abc123",
+                                        "confirmṔassword": "abc123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "confirmPassword": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
