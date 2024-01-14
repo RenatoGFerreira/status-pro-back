@@ -1,9 +1,9 @@
 import Joi from "joi";
+import { CreateUserParams } from "../utils/protocols";
 
-export const userSchema = Joi.object({
+export const userSchema = Joi.object<CreateUserParams>({
     name: Joi.string().required(),
     nickname: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string().min(3).required(),
-    confirmṔassword: Joi.string().min(3).required().valid(Joi.ref("password"))
 })
