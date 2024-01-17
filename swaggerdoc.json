@@ -20,16 +20,25 @@
         }
     ],
     "paths": {
+        "/health": {
+            "get": {
+                "summary": "Testa de api.",
+                "description": "Essa rota é responsável por testar se a rota está funcionando. Ela devolverá a frase <Tudo certo com a api!>",
+                "tags": [
+                    "Helth"
+                ]
+            }
+        },
         "/signup": {
             "post": {
                 "summary": "Cadastro de Usuário",
                 "description": "Essa rota é responsável por criar o usuário",
                 "tags": [
-                    "users"
+                    "Users"
                 ],
                 "requestBody": {
                     "content": {
-                        "application/json": {
+                        "body": {
                             "schema": {
                                 "$ref": "#/components/schemas/User"
                             },
@@ -47,6 +56,41 @@
                         }
                     }
                 }
+            }
+        },
+        "/signin": {
+            "post": {
+                "summary": "Login de Usuário",
+                "description": "Essa rota é responsável pelo usuário fazer login no game.",
+                "tags": [
+                    "Users"
+                ],
+                "requestBody": {
+                    "content": {
+                        "body": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "email": "renato@email.com",
+                                        "password": "abc123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "summary": "Recupera usuarios cadastrados",
+                "description": "Essa rota é responsável por recuperar usuários cadastrados.",
+                "tags": [
+                    "Users"
+                ]
             }
         }
     },
