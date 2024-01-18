@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*":["*"]
+    }
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
