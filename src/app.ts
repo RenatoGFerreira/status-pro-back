@@ -1,4 +1,4 @@
-import express, {json, Request, Response} from "express"
+import express, {json, Request, Response} from "express";
 import "express-async-errors"
 import httpStatus from "http-status"
 import swaggerUi from "swagger-ui-express"
