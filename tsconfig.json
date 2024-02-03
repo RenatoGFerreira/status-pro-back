@@ -12,7 +12,9 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "paths": {
-      "@/*":["*"]
+      "@/*": [
+        "*"
+      ]
     }
   },
   "ts-node": {

@@ -7,7 +7,7 @@ const userRouter = Router()
 
 userRouter.get("/users", userControllers.getAllUsers)
 userRouter.post("/signup", validateSchema(UserSchema), userControllers.createUser)
-userRouter.post("/signin", validateSchema(SigninSchema), userControllers.signIn )
+userRouter.post("/signin", validateSchema(SigninSchema), userControllers.signIn)
 //userRouter.post("/signout")
 
 export default userRouter
