@@ -1,0 +1,248 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Game StatusPro",
+    "description": "Essa API tem como objetivo integrar com o banco de dados do jogo",
+    "termOfService": "https://localhost:5000/terms",
+    "contact": {
+      "linkedIn": "https://www.linkedin.com/in/renato-ferreira-01/"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/"
+    },
+    {
+      "url": "https://localhost:5000/"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Rota index",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/ping": {
+      "get": {
+        "description": "Rota de saúde da aplicação",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "description": "Rota de recuperação de usuários cadastrados",
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signup": {
+      "post": {
+        "description": "Rota de cadastro de usuário",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signin": {
+      "post": {
+        "description": "Rota de autorização de usuário",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Signin"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "nickname": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "email": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "password": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              },
+              "minLength": {
+                "type": "number",
+                "example": 3
+              }
+            }
+          },
+          "confirmPassword": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      },
+      "Signin": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "password": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              },
+              "minLength": {
+                "type": "number",
+                "example": 3
+              }
+            }
+          }
+        },
+        "xml": {
+          "name": "Signin"
+        }
+      },
+      "Singup": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "nickname": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "email": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              }
+            }
+          },
+          "password": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "string"
+              },
+              "minLength": {
+                "type": "number",
+                "example": 3
+              }
+            }
+          },
+          "confirmPassword": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "xml": {
+          "name": "Singup"
+        }
+      },
+      "UserResponse": {
+        "xml": {
+          "name": "UserResponse"
+        },
+        "$ref": "#/components/schemas/User"
+      }
+    }
+  }
+}
